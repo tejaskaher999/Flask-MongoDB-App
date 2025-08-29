@@ -1,3 +1,36 @@
-Item ID
-Item UUID
-Item Hash
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+
+<body>
+    <form id="todoForm" action="/submit-todo" method="post">
+        <label>Item Name:</label>
+        <input type="text" name="itemName" required>
+        <br>
+        <label>Item Description:</label>
+        <input type="text" name="itemDescription" required>
+        <br>
+        <button type="submit">Add Item</button>
+        <br><br>
+        <a href="/get-todos" id="view-data-button"><button>View All Todos</button></a>
+    </form>
+
+
+</body>
+
+<style>
+    form {
+        display: grid;
+        justify-content: space-evenly;
+        align-content: space-between;
+        align-items: baseline;
+        justify-items: stretch;
+    }
+</style>
+
+</html>

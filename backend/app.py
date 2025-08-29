@@ -11,6 +11,7 @@ client = pymongo.MongoClient(MONGO_URI)
 db = client.Cluster
 
 collection = db['form_data']
+collection2 = db['todos']
 
 try:
     client.admin.command('ping')
@@ -38,13 +39,21 @@ def get_data():
 
     return jsonify(data)
 
-@app.route('/submittodoitem', methods=['POST'])
+@app.route('/submit-todo', methods=['POST'])
 def submit_todo():
-    item_name = request.json.get('itemName')
-    item_desc = request.json.get('itemDescription')
-    # Save to MongoDB
-    collection.insert_one({"name": item_name, "description": item_desc})
-    return jsonify({"status": "success"}), 201
+    form_data = dict(request.json)
+    todo = form_data.get('todo')
+
+    collection2.insert_one(form_data)
+
+    return "Todo Submitted Successfully!"
+
+@app.route('/view-todos', methods=['GET'])
+def view_todos():
+    todos = list(collection2.find())
+    for item in todos:
+        item['_id'] = str(item['_id'])
+    return jsonify(todos)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=True)
