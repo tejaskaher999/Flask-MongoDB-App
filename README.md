@@ -4,7 +4,7 @@
 Follow the steps below to set up and run the application (Backend + Frontend).
 
 ## Repository Link
-[GitHub Repository](https://github.com/tejaskaher999/tutedude)
+[GitHub Repository For Assignment Solution PDF](https://github.com/tejaskaher999/tutedude)
 
 
 ## MongoDB Atlas Connection String
