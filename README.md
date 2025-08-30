@@ -3,6 +3,10 @@
 
 Follow the steps below to set up and run the application (Backend + Frontend).
 
+## Repository Link
+[GitHub Repository](https://github.com/tejaskaher999/tutedude)
+
+
 ## MongoDB Atlas Connection String
 
 Make sure to create and replace with your proper MongoDB Atlas URL:
